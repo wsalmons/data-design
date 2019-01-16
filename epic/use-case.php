@@ -34,8 +34,8 @@
 		<ul>
 			<li>user</li>
 			<li>userId</li>
-			<li>userEmail</li>
-			<li>userName</li>
+			<li>userIdEmail</li>
+			<li>userIdName</li>
 			<li>userPassword</li>
 		</ul>
 		<h3>Photo</h3>
@@ -43,10 +43,33 @@
 			<li>photo</li>
 			<li>photoId</li>
 			<li>photoIdUserID</li>
-			<li>photoUrl</li>
-			<li>photoSize</li>
-			<li>photoCameraMetadata</li>
+			<li>photoIdUrl</li>
+			<li>photoIdSize</li>
+			<li>photoIdCameraMetadata</li>
 			</ul>
-
+		<h3>Group</h3>
+		<ul>
+			<li>groupId</li>
+			<li>groupIdPhotoId</li>
+			<li>groupIdUserId</li>
+		</ul>
+		<h3>Album</h3>
+		<ul>
+			<li>albumId</li>
+			<li>albumIdUserId</li>
+			<li>albumIdPhotoId</li>
+		</ul>
+		<h3>Relations</h3>
+		<ul>
+			<li>One user - one userId (1-1)</li>
+			<li>One userId - one userEmail, userName, userPassword (1-many)</li>
+			<li>One userId - many photoId (1-many)</li>
+			<li>One photo - one photoId (1-1)</li>
+			<li>One photoId - one photoUrl, photoSize, photoIdCameraMetadata (1-many)</li>
+			<li>Many groupId - many photoId (many-many)</li>
+			<li>Many groupId - many userId (many-many)</li>
+			<li>One userId - many albumId (1-many)</li>
+			<li>One albumId - many photoId (1-many)</li>
+		</ul>
 	</body>
 </html>
