@@ -54,7 +54,10 @@
 			<li>A new page is loaded, displaying a thumbnail of his new file.</li>
 			<li>Auden selects an album to upload the file to by selcting "add to albums" and searching in the resulting search bar for the intended album and selecting it.</li>
 			<li>Auden adds his files to various groups buy selecting the button "Add to groups" and searching for and selecting the intended groups</li>
-			<li></li>
+			<li>Auden selects the "Upload 1 Photo" button, resulting in a popup box asking confirmation.</li>
+			<li>Auden selects the "Upload" button.</li>
+			<li>A new page is loaded with the uploaded image displayed on it.</li>
 		</ol>
+		<h3><b>Frequency of Use:</b> 3-5 times a week.</h3>
 	</body>
 </html>
