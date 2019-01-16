@@ -44,7 +44,7 @@
 		<p><b>Usage Postconditions:</b> Auden successfully posts his image to his Flickr account.</p>
 		<hr>
 		<h3>Interaction Flow</h3>
-		<ol>
+		<ul>
 			<li>Auden enters Flickr.com into his web browser</li>
 			<li>The server receives his computers request, and displays Audens home page.</li>
 			<li>Auden is already logged into his Flikr.com account, indicated by his profile picture displayed in the top right of the page.</li>
@@ -57,7 +57,7 @@
 			<li>Auden selects the "Upload 1 Photo" button, resulting in a popup box asking confirmation.</li>
 			<li>Auden selects the "Upload" button.</li>
 			<li>A new page is loaded with the uploaded image displayed on it.</li>
-		</ol>
+		</ul>
 		<h3><b>Frequency of Use:</b> 3-5 times a week.</h3>
 	</body>
 </html>
