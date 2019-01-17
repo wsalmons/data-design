@@ -32,40 +32,32 @@
 		<h1>Conceptual Model</h1>
 		<h3>User</h3>
 		<ul>
-			<li>userId</li>
+			<li>userId(primary key)</li>
 			<li>userIdEmail</li>
 			<li>userIdName</li>
 			<li>userPassword</li>
 		</ul>
 		<h3>Photo</h3>
 		<ul>
-			<li>photoId</li>
-			<li>photoIdUserID</li>
+			<li>photoId(primary key)</li>
+			<li>photoIdUserID(foreign key)</li>
 			<li>photoIdUrl</li>
 			<li>photoIdFiletype</li>
 			<li>photoIdMetadata</li>
 			</ul>
 		<h3>Group</h3>
 		<ul>
-			<li>groupId</li>
+			<li>groupId(primary key)</li>
 			<li>groupIdName</li>
-			<li>groupIdPhotoId</li>
-			<li>groupIdUserId</li>
-		</ul>
-		<h3>Album</h3>
-		<ul>
-			<li>albumId</li>
-			<li>albumIdName</li>
-			<li>albumIdUserId</li>
-			<li>albumIdPhotoId</li>
+			<li>groupIdPhotoId(foreign key)</li>
+			<li>groupIdUserId(foreign key)</li>
 		</ul>
 		<h3>Relations</h3>
 		<ul>
 			<li>One userId - many photoId (1-many)</li>
-			<li>Many groupId - many photoId (many-many)</li>
-			<li>Many groupId - many userId (many-many)</li>
-			<li>One userId - many albumId (1-many)</li>
-			<li>One albumId - many photoId (1-many)</li>
+			<li>Many photoId - many groupId (many-many)</li>
+			<li>One userId - many groupId (1-many)</li>
 		</ul>
+		<img src="erd.png" alt="erd.png">
 	</body>
 </html>
