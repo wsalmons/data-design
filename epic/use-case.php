@@ -40,9 +40,9 @@
 		<h3>Photo</h3>
 		<ul>
 			<li>photoId(primary key)</li>
-			<li>photoIdUserID(foreign key)</li>
+			<li>photoIdUserId(foreign key)</li>
 			<li>photoIdUrl</li>
-			<li>photoIdFiletype</li>
+			<li>photoIdFileType</li>
 			<li>photoIdMetadata</li>
 			</ul>
 		<h3>Group</h3>
