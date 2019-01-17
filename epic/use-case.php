@@ -58,6 +58,7 @@
 			<li>Many photoId - many groupId (many-many)</li>
 			<li>One userId - many groupId (1-many)</li>
 		</ul>
-		<img src="erd.png" alt="erd.png">
+		<h1 align="center">ERD</h1>
+		<img style="margin-left: 110px" src="erd.png" alt="erd.png">
 	</body>
 </html>
