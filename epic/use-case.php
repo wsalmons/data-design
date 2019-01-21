@@ -41,6 +41,7 @@
 		<ul>
 			<li>photoId(primary key)</li>
 			<li>photoIdUserId(foreign key)</li>
+			<li>photoIdGroupId(foreign key)</li>
 			<li>photoIdUrl</li>
 			<li>photoIdFileType</li>
 			<li>photoIdMetadata</li>
@@ -48,9 +49,8 @@
 		<h3>Group</h3>
 		<ul>
 			<li>groupId(primary key)</li>
-			<li>groupIdName</li>
-			<li>groupIdPhotoId(foreign key)</li>
 			<li>groupIdUserId(foreign key)</li>
+			<li>groupIdName</li>
 		</ul>
 		<h3>Relations</h3>
 		<ul>
