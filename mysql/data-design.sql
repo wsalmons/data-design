@@ -6,8 +6,8 @@ ALTER DATABASE wsalmons CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 -- this is akin to reformatting and reinstalling Windows (OS X never needs a reinstall...) ;)
 -- never ever ever ever ever ever ever ever ever ever ever ever ever ever ever ever ever ever ever ever
 -- do this on live data!!!!
-DROP TABLE IF EXISTS `group`;
 DROP TABLE IF EXISTS photo;
+DROP TABLE IF EXISTS  `group`;
 DROP TABLE IF EXISTS `user`;
 
 -- the CREATE TABLE function is a function that takes tons of arguments to layout the table's schema
@@ -26,40 +26,39 @@ CREATE TABLE `user` (
 	PRIMARY KEY(userId)
 );
 
+-- create the group entity
+CREATE TABLE 	`group` (
+	-- this is for yet another primary key...
+	groupId BINARY(16) NOT NULL,
+	-- this is for a foreign key
+	groupIdUserId BINARY(16) NOT NULL,
+	groupIdName VARCHAR(32) NOT NULL,
+		-- this creates an index before making a foreign key
+	INDEX(groupIdUserId),
+	-- this creates the actual foreign key relation
+	FOREIGN KEY(groupIdUserId) REFERENCES `user`(userId),
+	-- and finally create the primary key
+	PRIMARY KEY(groupId)
+);
+
 -- create the photo entity
 CREATE TABLE photo (
 	-- this is for yet another primary key...
 	photoId BINARY(16) NOT NULL,
 	-- this is for a foreign key
 	photoIdUserId BINARY(16) NOT NULL,
+	photoIdGroupId BINARY(16),
 	photoIdUrl VARCHAR(140) NOT NULL,
-	photoIdFileType VARCHAR(32) NOT NULL,
 	photoIdMetadata VARCHAR(510) NOT NULL,
 	-- this creates an index before making a foreign key
 	INDEX(photoIdUserId),
 	-- this creates the actual foreign key relation
 	FOREIGN KEY(photoIdUserId) REFERENCES `user`(userId),
+	-- this creates an index before making a foreign key
+	INDEX(photoIdGroupId),
+	-- this creates the actual foreign key relation
+	FOREIGN KEY(photoIdGroupId) REFERENCES `group`(groupId),
 	-- and finally create the primary key
 	PRIMARY KEY(photoId)
-);
-
--- create the group entity
-CREATE TABLE 	`group` (
-	-- this is for yet another primary key...
-	groupId BINARY(16) NOT NULL,
-	-- this is for a foreign key
-	groupIdPhotoId BINARY(16) NOT NULL,
-	groupIdUserId BINARY(16) NOT NULL,
-	groupIdName VARCHAR(32) NOT NULL,
-		-- this creates an index before making a foreign key
-	INDEX(groupIdPhotoId),
-	-- this creates the actual foreign key relation
-	FOREIGN KEY(groupIdPhotoId) REFERENCES `photo`(photoId),
-	-- and finally create the primary key
-	INDEX(groupIdUserId),
-	-- this creates the actual foreign key relation
-	FOREIGN KEY(groupIdUserId) REFERENCES `user`(userId),
-	-- and finally create the primary key
-	PRIMARY KEY(groupId)
 );
 
