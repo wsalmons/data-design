@@ -36,7 +36,9 @@ SELECT photoId FROM photo WHERE photoIdUserId = UNHEX("e06598fa990f4a808c0c03b78
 SELECT photo.photoId, `group`.groupIdName FROM  `group` INNER JOIN `photo` on `group`.groupId = photo.photoIdGroupId WHERE `group`.groupIdName = "Pretty Neat Photos for Cool Cats";
 -- SELECT tableA.column1, tableA.column2 FROM tableA INNER JOIN tableB on tableA.primaryKeyA = tableB.foreignKeyA WHERE tableA.column = true.
 
+-- Counts photos that have groupId 6ea849260463457ab2bed7e9de29fa53
 SELECT photoIdGroupId, COUNT(*) FROM photo WHERE photoIdGroupId = UNHEX("6ea849260463457ab2bed7e9de29fa53") GROUP BY photoIdGroupId;
+
 
 
 
