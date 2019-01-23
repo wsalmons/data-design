@@ -32,6 +32,14 @@ WHERE photoId = UNHEX("7a73342d56534d378ad53129d22c5602");
 DELETE FROM photo WHERE photoId= UNHEX("7a73342d56534d378ad53129d22c5602");
 -- Selects a photoId from photo
 SELECT photoId FROM photo WHERE photoIdUserId = UNHEX("e06598fa990f4a808c0c03b78c1683af");
+-- joins photo to group
+SELECT photo.photoId, `group`.groupIdName FROM  `group` INNER JOIN `photo` on `group`.groupId = photo.photoIdGroupId WHERE `group`.groupIdName = "Pretty Neat Photos for Cool Cats";
+-- SELECT tableA.column1, tableA.column2 FROM tableA INNER JOIN tableB on tableA.primaryKeyA = tableB.foreignKeyA WHERE tableA.column = true.
+
+SELECT photoIdGroupId, COUNT(*) FROM photo WHERE photoIdGroupId = UNHEX("6ea849260463457ab2bed7e9de29fa53") GROUP BY photoIdGroupId;
+
+
+
 
 
 
